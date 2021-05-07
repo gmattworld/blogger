@@ -1,0 +1,14 @@
+{
+    "name": "gmattworld/blog_manager",
+    "description": "A laravel blog manager",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Oluwagbenga Matthew Afolabi",
+            "email": "gmattworld@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
