@@ -1,5 +1,5 @@
 {
-    "name": "gmattworld/blog_manager",
+    "name": "gmattworld/blogger",
     "description": "A laravel blog manager",
     "type": "library",
     "license": "MIT",
@@ -9,6 +9,46 @@
             "email": "gmattworld@gmail.com"
         }
     ],
+    "require": {
+        
+    },
+    "require-dev": {
+        
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "dont-discover": [],
+            "providers": [
+                "Gmattworld\\Blogger\\BloggerServiceProvider"
+            ]
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Gmattworld\\BlogManager\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            
+        }
+    },
     "minimum-stability": "dev",
-    "require": {}
+    "prefer-stable": true,
+    "scripts": {
+        "post-autoload-dump": [
+            
+        ],
+        "post-root-package-install": [
+            
+        ],
+        "post-create-project-cmd": [
+            
+        ]
+    }
 }
