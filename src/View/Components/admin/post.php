@@ -4,7 +4,7 @@ namespace Gmattworld\Blogger\View\Components\admin;
 
 use Illuminate\View\Component;
 
-class post extends Component
+class Post extends Component
 {
   public $model;
   /**
