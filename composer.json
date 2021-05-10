@@ -22,9 +22,8 @@
     },
     "extra": {
         "laravel": {
-            "dont-discover": [],
             "providers": [
-                "\\Gmattworld\\Blogger\\BloggerServiceProvider"
+                "Gmattworld\\Blogger\\BloggerServiceProvider"
             ]
         }
     },
