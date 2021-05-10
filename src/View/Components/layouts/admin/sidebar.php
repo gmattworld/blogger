@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components\layouts\admin;
+namespace Gmattworld\Blogger\View\Components\layouts\admin;
 
 use Illuminate\View\Component;
 
