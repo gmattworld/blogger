@@ -24,7 +24,7 @@
         "laravel": {
             "dont-discover": [],
             "providers": [
-                "Gmattworld\\Blogger\\BloggerServiceProvider"
+                "\\Gmattworld\\Blogger\\BloggerServiceProvider"
             ]
         }
     },
@@ -39,16 +39,5 @@
         }
     },
     "minimum-stability": "dev",
-    "prefer-stable": true,
-    "scripts": {
-        "post-autoload-dump": [
-            
-        ],
-        "post-root-package-install": [
-            
-        ],
-        "post-create-project-cmd": [
-            
-        ]
-    }
+    "prefer-stable": true
 }

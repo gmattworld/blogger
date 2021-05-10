@@ -2,9 +2,9 @@
 
 namespace Gmattworld\Blogger;
 
-// use Gmattworld\Blogger\View\Components\admin\CreatePost;
+use Gmattworld\Blogger\View\Components\admin\CreatePost;
 use Gmattworld\Blogger\View\Components\admin\posts as AdminPosts;
-// use Gmattworld\Blogger\View\Components\admin\post as AdminPost;
+use Gmattworld\Blogger\View\Components\admin\post as AdminPost;
 use Gmattworld\Blogger\View\Components\layouts\admin;
 use Gmattworld\Blogger\View\Components\posts;
 use Gmattworld\Blogger\View\Components\post;
@@ -20,12 +20,10 @@ class BloggerServiceProvider extends ServiceProvider
     $this->mergeConfigFrom(__DIR__.'/config/blogger.php', 'blogger');
 
     $this->loadViewComponentsAs('blogger', [
-      // CreatePost::class,
+      CreatePost::class,
       AdminPosts::class,
-      // AdminPost::class,
-
-
-
+      AdminPost::class,
+      
       admin::class,
       posts::class,
       post::class,
