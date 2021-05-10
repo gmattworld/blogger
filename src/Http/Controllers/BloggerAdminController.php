@@ -3,7 +3,7 @@
 namespace Gmattworld\Blogger\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use Gmattworld\Blogger\Models\posts;
+use Gmattworld\Blogger\Models\Posts;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -22,7 +22,7 @@ class BloggerAdminController extends Controller
      */
     public function index()
     {
-      $posts = posts::orderBy('created_at', 'desc')->get();
+      $posts = Posts::orderBy('created_at', 'desc')->get();
       return view('blogger::admin.posts')->with(['model'=> $posts]);
     }
 
@@ -39,12 +39,12 @@ class BloggerAdminController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\post  $post
+     * @param  string  $post
      * @return \Illuminate\Http\Response
      */
     public function edit(string $post)
     {
-      $entity = posts::findOrFail($post);
+      $entity = Posts::findOrFail($post);
       return view('blogger::admin.edit_post')->with(['model' => $entity]);
     }
 
@@ -73,7 +73,7 @@ class BloggerAdminController extends Controller
             $path = $request->file('banner')->storeAs('public/banners', $fileNameToStore);
         }
 
-        $entity = new posts();
+        $entity = new Posts();
         $entity->id = Str::uuid()->toString();
         $entity->topic = $request->input('topic');
         $entity->category = $request->input('category');
@@ -90,7 +90,7 @@ class BloggerAdminController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\post  $post
+     * @param  string  $post
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, string $post)
@@ -103,7 +103,7 @@ class BloggerAdminController extends Controller
             'banner' => 'image|nullable|max:1999'
         ]);
 
-        $entity = posts::findOrFail($post);
+        $entity = Posts::findOrFail($post);
 
         //Handle File Upload
         if ($request->hasFile('banner')) {
@@ -131,24 +131,24 @@ class BloggerAdminController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\post  $post
+     * @param  string  $post
      * @return \Illuminate\Http\Response
      */
     public function show(string $post)
     {
-        $entity = posts::findOrFail($post);
+        $entity = Posts::findOrFail($post);
         return view('blogger::admin.post')->with(['model' => $entity]);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\post  $post
+     * @param  string $post
      * @return \Illuminate\Http\Response
      */
     public function destroy(string $post)
     {
-        $entity = posts::findOrFail($post);
+        $entity = Posts::findOrFail($post);
         $entity->delete();
         if($entity->banner != 'default.svg'){
           Storage::delete(['public/banners/' . $entity->banner]);

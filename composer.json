@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        
+        "laravelcollective/html": "^6.0"
     },
     "require-dev": {
         
