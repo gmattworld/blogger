@@ -4,7 +4,7 @@ namespace Gmattworld\Blogger\View\Components\layouts;
 
 use Illuminate\View\Component;
 
-class admin extends Component
+class Admin extends Component
 {
   public function __construct()
   {

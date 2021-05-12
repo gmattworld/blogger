@@ -3,11 +3,11 @@
 namespace Gmattworld\Blogger;
 
 use Gmattworld\Blogger\View\Components\admin\CreatePost;
-use Gmattworld\Blogger\View\Components\admin\posts as AdminPosts;
-use Gmattworld\Blogger\View\Components\admin\post as AdminPost;
-use Gmattworld\Blogger\View\Components\layouts\admin;
-use Gmattworld\Blogger\View\Components\posts;
-use Gmattworld\Blogger\View\Components\post;
+use Gmattworld\Blogger\View\Components\admin\Posts as AdminPosts;
+use Gmattworld\Blogger\View\Components\admin\Post as AdminPost;
+use Gmattworld\Blogger\View\Components\layouts\Admin;
+use Gmattworld\Blogger\View\Components\Posts;
+use Gmattworld\Blogger\View\Components\Post;
 use Illuminate\Support\ServiceProvider;
 
 class BloggerServiceProvider extends ServiceProvider
@@ -23,10 +23,9 @@ class BloggerServiceProvider extends ServiceProvider
       CreatePost::class,
       AdminPosts::class,
       AdminPost::class,
-      
-      admin::class,
-      posts::class,
-      post::class,
+      Admin::class,
+      Posts::class,
+      Post::class,
     ]);
 
 
