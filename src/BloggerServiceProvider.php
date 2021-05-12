@@ -23,7 +23,6 @@ class BloggerServiceProvider extends ServiceProvider
       CreatePost::class,
       AdminPosts::class,
       AdminPost::class,
-      
       Admin::class,
       Posts::class,
       Post::class,
