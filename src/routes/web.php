@@ -5,19 +5,15 @@ use Gmattworld\Blogger\Http\Controllers\BloggerAdminController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::group(['middleware' => ['web']], function () {
+Route::group(['middleware' => ['web', 'auth']], function () {
   Route::prefix('blogger')->group(function () {  
     Route::get('/', [BloggerController::class, 'posts']);
     Route::get('/{id}', [BloggerController::class, 'post']);
   });
 
 
-  Route::prefix('admin/blogger')->group(function () {
-    Route::resource('/', BloggerAdminController::class);
-    Route::get('/{id}/status', [BloggerAdminController::class, 'status']);
+  Route::prefix('admin')->group(function () {
+    Route::resource('/blogger', BloggerAdminController::class);
+    Route::get('/blogger/{id}/status', [BloggerAdminController::class, 'status']);
   });
-
-// Route::post('testpost', function (Request $request) {
-//     $request->all();
-// });
 });
