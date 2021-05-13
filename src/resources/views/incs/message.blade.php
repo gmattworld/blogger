@@ -8,7 +8,7 @@
 @endif --}}
 <div  x-data="{toggle: true}">
 @if(session('success'))
-  <div class="relative px-6 py-4 mb-4 text-white border-0 rounded bg-primary-500" @click.away="toggle = false" x-show="toggle">
+  <div class="relative px-6 py-4 mb-4 text-white bg-gray-500 border-0 rounded" @click.away="toggle = false" x-show="toggle">
     <span class="inline-block mr-5 text-xl align-middle">
       <i class="fa fa-bell"></i>
     </span>

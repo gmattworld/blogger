@@ -27,6 +27,18 @@ class BloggerAdminController extends Controller
     }
 
     /**
+     * Display the specified resource.
+     *
+     * @param  string  $post
+     * @return \Illuminate\Http\Response
+     */
+    public function show(string $post)
+    {
+      $entity = Posts::findOrFail($post);
+      return view('blogger::admin.post')->with(['model' => $entity]);
+    }
+
+    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
@@ -80,7 +92,7 @@ class BloggerAdminController extends Controller
         $entity->brief = $request->input('brief');
         $entity->body = $request->input('body');
         $entity->banner = $request->hasFile('banner') ? $fileNameToStore : 'default.svg';
-        $entity->user_id = ""; //auth()->user()->id;
+        $entity->user_id = auth()->user()->id;
         $entity->status = false;        
         $entity->save();
         return redirect('/admin/blogger')->with(['success' => 'Post created']);
@@ -126,19 +138,7 @@ class BloggerAdminController extends Controller
         $entity->status = true;
         $entity->save();
         return redirect('/admin/blogger')->with(['success' => 'Post updated']);
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  string  $post
-     * @return \Illuminate\Http\Response
-     */
-    public function show(string $post)
-    {
-        $entity = Posts::findOrFail($post);
-        return view('blogger::admin.post')->with(['model' => $entity]);
-    }
+    }    
 
     /**
      * Remove the specified resource from storage.

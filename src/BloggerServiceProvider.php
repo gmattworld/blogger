@@ -18,6 +18,7 @@ class BloggerServiceProvider extends ServiceProvider
     $this->loadViewsFrom(__DIR__.'/resources/views/', 'blogger');
     $this->loadMigrationsFrom(__DIR__.'/database/migrations');
     $this->mergeConfigFrom(__DIR__.'/config/blogger.php', 'blogger');
+    $this->publishes([__DIR__.'/public' => public_path('vendor/blogger'),], 'public');
 
     $this->loadViewComponentsAs('blogger', [
       CreatePost::class,

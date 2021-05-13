@@ -3,7 +3,7 @@
     <div class="w-full px-3 py-2 mb-3 text-lg font-bold">
       {!! $model->topic !!}
     </div>
-    <article class="px-4 py-5 text-base text-gray-500 bg-white rounded shadow">
+    <article id="reader" class="px-4 py-5 text-base text-gray-500 bg-white rounded shadow">
       {!! $model->body !!}
     </article>
   </div>
