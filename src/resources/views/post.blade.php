@@ -4,6 +4,12 @@
     <title> Blogger </title>
     <link rel="stylesheet" href="//fonts.googleapis.com/css2?family=Montserrat">
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="{!! asset('vendor/blogger/css/prism.css') !!}">
+    <script src="{!! asset('vendor/blogger/js/prism.js') !!}"></script>
+
+    
   </head>
   <body>
     <div class="pt-16">      

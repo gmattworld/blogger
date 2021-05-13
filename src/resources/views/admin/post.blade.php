@@ -17,10 +17,10 @@
   </div>
 
   @push('styles')
-    <link rel="stylesheet" href="{!! asset('css/prism.css') !!}">
+    <link rel="stylesheet" href="{!! asset('vendor/blogger/css/prism.css') !!}">
   @endpush
 
   @push('scripts')
-    <script src="{!! asset('js/prism.js') !!}"></script>
+    <script src="{!! asset('vendor/blogger/js/prism.js') !!}"></script>
   @endpush
 </x-blogger::layouts.admin>
